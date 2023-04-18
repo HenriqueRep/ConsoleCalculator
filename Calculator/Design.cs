@@ -4,6 +4,7 @@ namespace Calculator
 {
     public static class Design
     {
+        //Desenho externo da Calculadora.
         static void ExternalDesign()
         {
             Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -53,6 +54,7 @@ namespace Calculator
             }
             Console.ForegroundColor = ConsoleColor.White;
         }
+        //Desenho do display da Calculadora.
         static void Display()
         {
             int larguraD = 33;
@@ -101,7 +103,7 @@ namespace Calculator
                 }
             }
             Console.ForegroundColor = ConsoleColor.White;
-        }
+        }        
         static void Box(int X, int Y, char OP, string nameOP)
         {
             Console.SetCursorPosition(3, 6);
@@ -111,6 +113,7 @@ namespace Calculator
             Console.SetCursorPosition(3, 9);
             Console.WriteLine("ATALHOS DE OPERAÇÕES DISPONIVEIS: ");
 
+            //Desenha os botões.
             int alturaC = 2;
             int larguraC = 4;
             int PosX = X;
@@ -166,6 +169,15 @@ namespace Calculator
             }
             Console.ForegroundColor = ConsoleColor.White;
         }
+        //Limpa a linha com base no tamanho do desenho do Display da Calculadora.
+        public static void CleanLine(int space)
+        {
+            for(int i = 1; i <= 36-space; i++)
+            {
+                Console.Write(" ");
+            }
+        }
+        //Método que desenha o "formato" de calculadora e seus botões.
         public static void Construção()
         {
             ExternalDesign();

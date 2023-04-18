@@ -8,6 +8,7 @@ namespace Calculator
     {
         public static string ReadLine(int maxLength)
         {
+            //Método de entrada que limita o usuário em inserir apenas 1 caracter no console. Utilizado na solicitação de entrada de "Operação".
             var line = "";
             while (true)
             {
@@ -26,7 +27,7 @@ namespace Calculator
             }
             return line.ToString();
         }
-
+        //Retorna o aviso que solicita a correção do valor inserido por parte do usuário.
         public static void InputTypeLimit(string type)
         {
             Console.SetCursorPosition(3, 4);
@@ -36,6 +37,7 @@ namespace Calculator
                 case ("nu"): Console.WriteLine("Por favor, insira apenas números!"); break;
                 case ("op"): Console.WriteLine("Escolha uma operação abaixo!"); break;
             }
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(3, 4);
             Console.ReadKey();

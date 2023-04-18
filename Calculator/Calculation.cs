@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Calculator
 {
@@ -25,7 +24,7 @@ namespace Calculator
                 case "-": result = Number1 - Number2; break;
                 case "*": result = Number1 * Number2; break;
                 case "/": result = Number1 / Number2; break;
-                case "l": result = Math.Log10(Number1) ; break;
+                case "l": result = Math.Log10(Number1); break;
                 case "r": result = Math.Sqrt(Number1); break;
                 case "i": result = Math.Pow(Number1, Number2); break;
             }
@@ -34,7 +33,16 @@ namespace Calculator
 
         public override string ToString()
         {
-            return Number1.ToString("0.#####") + Operation.ToString() + Number2.ToString() + "=";
+            if (Operation == "r")
+            {
+                return "Raiz de " + Number1.ToString("0.#####") + " =";
+            }
+            if (Operation == "l")
+            {
+                return Number1.ToString("0.#####") + " em log na base 10" + " =";
+            }
+
+            return Number1.ToString("0.#####") + Operation.ToString() + Number2.ToString() + " =";
         }
     }
 }
